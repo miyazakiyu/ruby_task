@@ -31,6 +31,8 @@ def q4
 
   # 以下に回答を記載
 p sports.compact!
+#compactだとnilを取り除いた配列を出力してくれるが元の配列自体が変更されない。
+#compact!(破壊的メソット)を使うことにより元の配列も変更する。
 
 end
 
@@ -41,6 +43,8 @@ def q5
   # 以下に回答を記載
 p array1.empty?
 p array2.empty?
+#empty?メソッドは配列が空かどうかを調べる
+#空ならtrue,空でないならfalse
 end
 
 def q6
@@ -49,6 +53,8 @@ def q6
   # 以下に回答を記載
 numbers2 = numbers1.map { |i| i * 10}
 p numbers2
+#mapメソッドはブロックの値を集めた新しい配列を作るときに使うメソッド。
+#mapメソッド(別名　collectメソッド)
 end
 
 def q7
@@ -57,6 +63,7 @@ def q7
   # 以下に回答を記載
 # p array.map!{|i| i.to_i}
 p array.map!(&:to_i)
+#map!メソッドは元の値も書き換える。(破壊的メソッド)
 end
 
 def q8
@@ -68,21 +75,35 @@ upper_case_programming_languages = programming_languages.map(&:upcase)
 
 p programming_languages
 p upper_case_programming_languages
+# ・downcaseで大文字を小文字に変換
+# ・upcaseで小文字を大文字に変換
+# ・swapcaseで小文字⇔大文字の変換
+# ・capitalizeで先頭の小文字を大文字に変換
 end
 
 def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-names.each.with_index(1) { |name,index|
-  puts "会員No.#{index} #{name}さん"
-}
+names.each.with_index(1) do |name,i|
+  puts "会員No.#{i} #{name}さん"
+end
+
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
+foods.each do |food|
+  if food.include?("うに")
+    puts "好物です"
+  else
+    puts "まぁまぁ好物です"
+  end
+end
+#include?メソッドは、メソッドに取った引数が配列に含まれている時にtrueを返す。
+#含まれていなければfalseを返す。配列の検索機能のようなもの。
 
 end
 
