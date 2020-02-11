@@ -111,6 +111,15 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
+puts "ユーザーの趣味一覧"
+
+ sports2 = sports.flatten.uniq
+
+ sports2.each.with_index(1) do |sports,i|
+  puts "No.#{i} #{sports}"
+ end
+ # flatten は自身を再帰的に平坦化した配列を生成して返す。
+ # uniq は配列から重複した要素を取り除いた新しい配列を返す。
 
 end
 
