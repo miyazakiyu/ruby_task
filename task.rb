@@ -5,8 +5,8 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-names << "齋藤"
-p names
+  names << "齋藤"
+  p names
 end
 
 def q2
@@ -14,25 +14,25 @@ def q2
   array2 = %w(bird bat tiger)
 
   # 以下に回答を記載
-array = array1 + array2
-p array
+  array = array1 + array2
+  p array
 end
 
 def q3
   numbers = [1, 5, 8, 10, 2, 3, 2, 3, 3, 1, 4, 5, 9]
 
   # 以下に回答を記載
-count = numbers.count(3)
-p count
+  count = numbers.count(3)
+  p count
 end
 
 def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-p sports.compact!
-#compactだとnilを取り除いた配列を出力してくれるが元の配列自体が変更されない。
-#compact!(破壊的メソット)を使うことにより元の配列も変更する。
+  p sports.compact!
+  #compactだとnilを取り除いた配列を出力してくれるが元の配列自体が変更されない。
+  #compact!(破壊的メソット)を使うことにより元の配列も変更する。
 
 end
 
@@ -41,53 +41,53 @@ def q5
   array2 = [1, 5, 8, 10]
 
   # 以下に回答を記載
-p array1.empty?
-p array2.empty?
-#empty?メソッドは配列が空かどうかを調べる
-#空ならtrue,空でないならfalse
+  p array1.empty?
+  p array2.empty?
+  #empty?メソッドは配列が空かどうかを調べる
+  #空ならtrue,空でないならfalse
 end
 
 def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-numbers2 = numbers1.map { |i| i * 10}
-p numbers2
-#mapメソッドはブロックの値を集めた新しい配列を作るときに使うメソッド。
-#mapメソッド(別名　collectメソッド)
+  numbers2 = numbers1.map { |i| i * 10}
+  p numbers2
+  #mapメソッドはブロックの値を集めた新しい配列を作るときに使うメソッド。
+  #mapメソッド(別名　collectメソッド)
 end
 
 def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-# p array.map!{|i| i.to_i}
-p array.map!(&:to_i)
-#map!メソッドは元の値も書き換える。(破壊的メソッド)
+  # p array.map!{|i| i.to_i}
+  p array.map!(&:to_i)
+  #map!メソッドは元の値も書き換える。(破壊的メソッド)
 end
 
 def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-programming_languages.map!(&:capitalize)
-upper_case_programming_languages = programming_languages.map(&:upcase)
+  programming_languages.map!(&:capitalize)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
 
-p programming_languages
-p upper_case_programming_languages
-# ・downcaseで大文字を小文字に変換
-# ・upcaseで小文字を大文字に変換
-# ・swapcaseで小文字⇔大文字の変換
-# ・capitalizeで先頭の小文字を大文字に変換
+  p programming_languages
+  p upper_case_programming_languages
+  # ・downcaseで大文字を小文字に変換
+  # ・upcaseで小文字を大文字に変換
+  # ・swapcaseで小文字⇔大文字の変換
+  # ・capitalizeで先頭の小文字を大文字に変換
 end
 
 def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-names.each.with_index(1) do |name,i|
-  puts "会員No.#{i} #{name}さん"
-end
+  names.each.with_index(1) do |name,i|
+    puts "会員No.#{i} #{name}さん"
+  end
 
 end
 
@@ -95,15 +95,15 @@ def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-foods.each do |food|
-  if food.include?("うに")
-    puts "好物です"
-  else
-    puts "まぁまぁ好物です"
+  foods.each do |food|
+    if food.include?("うに")
+      puts "好物です"
+    else
+      puts "まぁまぁ好物です"
+    end
   end
-end
-#include?メソッドは、メソッドに取った引数が配列に含まれている時にtrueを返す。
-#含まれていなければfalseを返す。配列の検索機能のようなもの。
+  #include?メソッドは、メソッドに取った引数が配列に含まれている時にtrueを返す。
+  #含まれていなければfalseを返す。配列の検索機能のようなもの。
 
 end
 
@@ -111,15 +111,15 @@ def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-puts "ユーザーの趣味一覧"
+  puts "ユーザーの趣味一覧"
 
- sports2 = sports.flatten.uniq
+  sports2 = sports.flatten.uniq
 
- sports2.each.with_index(1) do |sports,i|
-  puts "No.#{i} #{sports}"
- end
- # flatten は自身を再帰的に平坦化した配列を生成して返す。
- # uniq は配列から重複した要素を取り除いた新しい配列を返す。
+  sports2.each.with_index(1) do |sports,i|
+    puts "No.#{i} #{sports}"
+  end
+  # flatten は自身を再帰的に平坦化した配列を生成して返す。
+  # uniq は配列から重複した要素を取り除いた新しい配列を返す。
 
 end
 
@@ -127,7 +127,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  p data[:user][:name]
 end
 
 def q13
@@ -135,15 +135,19 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  p user_data.merge(update_data)
+  # mergeメソッドとは複数のハッシュを結合させるメソッド
+  # 重複するキーがある場合は引数として渡された方のハッシュのキーで上書きされる。
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  p data.keys
 end
+  # keysメソッドは、[ハッシュ]の全てのキーを配列に変換することができる。
+  # valuesメソッドだと、全ての値を配列に変換することができる。
 
 def q15
   data1 = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
