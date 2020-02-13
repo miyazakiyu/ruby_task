@@ -135,7 +135,7 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  p user_data.merge(update_data)
+  p user_data.merge!(update_data)
   # mergeメソッドとは複数のハッシュを結合させるメソッド
   # 重複するキーがある場合は引数として渡された方のハッシュのキーで上書きされる。
 end
@@ -154,7 +154,17 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+  if data1.include?(:age)
+    puts "OK"
+  else
+    puts "NG"
+  end
 
+  if data2.include?(:age)
+    puts "OK"
+  else
+    puts "NG"
+  end
 end
 
 def q16
@@ -166,8 +176,10 @@ def q16
   ]
 
   # 以下に回答を記載
-
-end
+  users.each do |user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}です。"
+  end
+ end
 
 class UserQ17
   # 以下に回答を記載
