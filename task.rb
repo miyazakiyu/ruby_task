@@ -146,8 +146,8 @@ def q14
   # 以下に回答を記載
   p data.keys
 end
-  # keysメソッドは、[ハッシュ]の全てのキーを配列に変換することができる。
-  # valuesメソッドだと、全ての値を配列に変換することができる。
+# keysメソッドは、[ハッシュ]の全てのキーを配列に変換することができる。
+# valuesメソッドだと、全ての値を配列に変換することができる。
 
 def q15
   data1 = { name: "saitou", hobby: "soccer", age: 33, role: "admin" }
@@ -167,8 +167,9 @@ def q15
   # end
 
   #三項演算子を使用
-  puts data1.include?(:age) ? "OK" : "NG"
-  puts data2.include?(:age) ? "OK" : "NG"
+  #key?は特定のキーが存在するか調べるメソッド
+  puts data1.key?(:age) ? "OK" : "NG"
+  puts data2.key?(:age) ? "OK" : "NG"
 end
 
 def q16
@@ -183,11 +184,25 @@ def q16
   users.each do |user|
     puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}です。"
   end
- end
+end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(**user)
+    @name = user[:name]
+    @age = user[:age]
+    @gender = user[:gender]
+    @admin = user[:admin] ? "有り" : "無し"
+  end
 
+  def info
+    puts <<~TEXT
+    名前: #{@name}
+    年齢: #{@age}
+    性別: #{@gender}
+    管理者権限: #{@admin}
+    TEXT
+  end
 end
 
 def q17
