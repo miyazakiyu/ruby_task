@@ -188,21 +188,39 @@ end
 
 class UserQ17
   # 以下に回答を記載
-  def initialize(**user)
-    @name = user[:name]
-    @age = user[:age]
-    @gender = user[:gender]
-    @admin = user[:admin] ? "有り" : "無し"
+  # def initialize(**user)
+  #    @name = user[:name]
+  #    @age = user[:age]
+  #    @gender = user[:gender]
+  #    @admin = user[:admin] ? "有り" : "無し"
+  # end
+  #
+  # def info
+  #   puts <<~TEXT
+  #   名前: #{@name}
+  #   年齢: #{@age}
+  #   性別: #{@gender}
+  #   管理者権限: #{@admin}
+  #   TEXT
+  # end
+
+  def initialize(name:, age:, gender:, admin:)
+    @name = name
+    @age = age
+    @gender = gender
+    @admin = admin
   end
 
   def info
+    admin = @admin ? "有り" : "無し"
     puts <<~TEXT
     名前: #{@name}
     年齢: #{@age}
     性別: #{@gender}
-    管理者権限: #{@admin}
+    管理者権限: #{admin}
     TEXT
   end
+
 end
 
 def q17
